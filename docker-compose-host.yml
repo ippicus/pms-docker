@@ -1,0 +1,14 @@
+version: '2'
+services:
+  plex:
+    container_name: plex media server
+    image: ippicus/pms-docker
+    restart: unless-stopped
+    environment:
+      - TZ=Australia/Canberra
+      - PLEX_CLAIM=claim-WR1jFtfqosb47roY_DRF
+    network_mode: host
+    volumes:
+      - c:\users\jjkee\PLEXDB\:/config
+      - c:\users\jjkee\PLEXTC\:/transcode
+      - C:\Users\jjkee\MEDIA\:/data
